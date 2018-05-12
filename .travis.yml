@@ -1,0 +1,8 @@
+services:
+- docker
+
+install:
+- docker pull gamedrivendesign/godot-export
+
+script:
+- docker run -v $(pwd):/build/src gamedrivendesign/godot-export /build/godot --path /build/src -d -s /build/src/addons/gut/gut_cmdln.gd 
